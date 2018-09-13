@@ -11,11 +11,7 @@ const board            = new BoardController( );
 new Database( );
 
 // Root entrypoint.
-router.get( `/`,                    ( req,res ) => res.render( 'index'  ) );
-
-// Boards entrypoints.
-router.get( '/b/:board',            ( req,res ) => res.render( 'board'  ) );
-router.get( '/b/:board/:threadid',  ( req,res ) => res.render( 'thread' ) );
+router.get( `/`, ( req,res ) => res.render( 'index'  ) );
 
 // API entrypoints.
 router.route( `/api/boards` )
@@ -34,6 +30,6 @@ router.route( `/api/replies/:board` )
   .delete( async ( req,res ) => res.send( await reply.deleteReply       ( req ) ) );
 
 // 404 errors.
-router.all( '*', ( req,res ) => res.status( 404 ).render( '404' ) );
+// router.all( '*', ( req,res ) => res.status( 404 ).render( '404' ) );
 
 module.exports = router;

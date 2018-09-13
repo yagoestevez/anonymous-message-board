@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 app.set( 'view engine', 'pug' );
 app.set( 'views', './App/Views' );
-app.use( '/assets', express.static( 'App/Views/Assets' ) );
+app.use( '/static', express.static( 'App/Views/static' ) );
 
 // For FCC testing purposes only
 app.use( cors( { origin: '*' } ) );

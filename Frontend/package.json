@@ -13,6 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "mv build ../Backend/App/Views",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
