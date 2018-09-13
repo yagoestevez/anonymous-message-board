@@ -10,10 +10,16 @@ const API = {
       .catch( error => onError( error.response ) );
   },
 
-  getThreads: ( board, callback ) => {
+  getThreads: ( board, onSuccess ) => {
     return Axios.get( `${ URL }/api/threads/${ board }` )
-      .then(  data  => callback( data.data.map( b => b ) ) )
+      .then(  data  => onSuccess( data.data.map( b => b ) ) )
       .catch( error => console.log( error.response ) );
+  },
+
+  getFullThread: ( board, thread_id, onSuccess, onError ) => {
+    return Axios.get( `${ URL }/api/replies/${ board }?thread_id=${ thread_id }` )
+      .then(  data  => onSuccess( data.data ) )
+      .catch( error => onError( error.response ) );
   },
 
   post: ( type, event, board, thread_id, text, delete_password, onSuccess, onError ) => {

@@ -41,13 +41,13 @@ class Boards extends React.Component {
             {
               this.state.boards.map( ( b, i ) => (
                 <div key={ i }>
-                  <div className="box">
+                  <div className="box bordered">
                     <article>
                       <div className="media-content">
                         <div className="content has-text-centered">
-                          <p className="title is-4">{ b }</p>
+                          <p className="title is-3">{ b }</p>
                         </div>
-                        <Link to={ '/b/' + b } className="button is-danger is-fullwidth">
+                        <Link to={ '/b/' + b } className="button is-danger is-fullwidth is-medium">
                           Open Board
                         </Link>
                       </div>

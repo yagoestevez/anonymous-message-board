@@ -4,7 +4,7 @@ const Replies = props => (
   <div className="box">
     <div className="level is-mobile">
       <div>
-        <p className="is-fullwidth" style={{ textAlign: 'justify', paddingRight: '1rem'}}>
+        <p className="is-fullwidth reply-text">
           { props.reply.text }
         </p>
       </div>
@@ -19,7 +19,7 @@ const Replies = props => (
         </a>
         <a
           className="level-item"
-          onClick={ ( ) => props.toggleModal( 'reply', props.reply._id ) }
+          onClick={ ( ) => props.toggleModal( 'reply', props.reply._id, false ) }
           >
           <span className="icon is-small has-text-danger">
             <i className="fas fa-trash-alt" aria-hidden="true" title="Delete Reply"></i>

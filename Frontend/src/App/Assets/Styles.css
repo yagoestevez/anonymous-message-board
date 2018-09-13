@@ -1,8 +1,10 @@
 /********** Body **********/
 body {
-  margin              : 0;
-  padding             : 0;
   font-family         : 'Noto Serif KR', sans-serif;
+}
+
+body, .card-footer-item, .reply-to-title {
+  background          : #f5f5f5;
   background          : repeating-linear-gradient(
                           45deg,
                           #fcfcfc,
@@ -14,6 +16,12 @@ body {
 
 /********** Nav **********/
 .hero {
+  -webkit-clip-path   : polygon(0 0, 100% 0, 100% 93%, 0% 100%);
+  clip-path           : polygon(0 0, 100% 0, 100% 93%, 0% 100%);
+}
+
+.hero, .card-content {
+  background          : #ff2b56; 
   background          : repeating-linear-gradient(
                           45deg,
                           #ff2b56,
@@ -21,8 +29,6 @@ body {
                           #fa244f 10px,
                           #fa244f 20px
                         );
-  -webkit-clip-path   : polygon(0 0, 100% 0, 100% 93%, 0% 100%);
-  clip-path           : polygon(0 0, 100% 0, 100% 93%, 0% 100%);
 }
 
 .hero.is-danger .navbar-menu {
@@ -35,7 +41,12 @@ body {
   box-shadow          : none;
   padding             : 1.25rem;
   margin-bottom       : 1rem !important;
+  background          : #f5f5f5;
+}
+
+.box.bordered {
   border              : 1px solid #ff2b56;
+  background          : #ffffff;
 }
 
 /********** Thread **********/
@@ -43,9 +54,17 @@ body {
   padding-bottom      : 0 !important;
 }
 
+.card {
+  box-shadow          : 0px 0px 30px rgba( 0, 0, 0, 0.3 );
+}
+
 .card-content {
-  background          : #ff2b56;
   padding-bottom      : 0.5rem;
+}
+
+.card-footer-item {
+  font-weight         : bold;
+  text-transform      : uppercase;
 }
 
 p.thread-title {
@@ -65,17 +84,14 @@ p.thread-title {
 }
 
 .reply-to-title {
-  background          : #f5f5f5;
-  background          : repeating-linear-gradient(
-                          45deg,
-                          #fcfcfc,
-                          #fcfcfc 10px,
-                          #f5f5f5 10px,
-                          #f5f5f5 20px
-                        );
   border-bottom       : 1px solid #fa244f;
   padding             : 1.25rem;
   margin-bottom       : 0;
+}
+
+.reply-text {
+  text-align          : justify;
+  padding-right       : 1rem;
 }
 
 /********** Publish Form **********/
@@ -104,6 +120,10 @@ p.thread-title {
 
 .button.is-danger:hover {
   background          : #189ACC !important;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color        : #ff2b56 !important;
 }
 
 /********** Footer **********/

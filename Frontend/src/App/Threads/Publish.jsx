@@ -3,7 +3,6 @@ import PublishForm from './PublishForm';
 import Nav         from '../Utils/Nav';
 import Footer      from '../Utils/Footer';
 import 'bulma/css/bulma.css';
-import '../Styles.css';
 
 const Publish = ( ) => (
   <React.Fragment>

@@ -30,16 +30,14 @@ class ReplyForm extends React.Component {
   setInputValue = event => {
     const option = event.target.value;
     const id     = event.target.id;
-    this.setState( {
-      [id] : option
-    } );
+    this.setState( { [id]: option } );
   }
 
   render ( ) {
     return (
       <div>
         <form onSubmit={ this.postReply }>
-          <p className="reply-to-title title is-5 has-text-centered">Reply to this thread</p>
+          <p className="reply-to-title title is-5 has-text-centered">Add your comment</p>
           <section className="modal-card-body">
             <div className="field">
               <div className="control">

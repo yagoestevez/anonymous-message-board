@@ -1,11 +1,13 @@
-import React from 'react';
-import API   from '../Helpers/API';
+import React       from 'react';
+import { Redirect} from 'react-router-dom'
+import API         from '../Helpers/API';
 
 class DeleteModal extends React.Component {
 
   state = {
-    password: '',
-    error   : ''
+    password : '',
+    error    : '',
+    redirect : false
   }
 
   setInputValue = event => {
@@ -16,6 +18,7 @@ class DeleteModal extends React.Component {
 
   delete = ( event ) => {
     const isReply = this.props.modal === 'reply';
+
     API.delete(
       event,
       this.props.board,
@@ -23,7 +26,13 @@ class DeleteModal extends React.Component {
       isReply ? this.props.id : false,
       this.state.password,
       data => {
-        this.props.getThreads( );
+        if ( this.props.getThreads ) {
+          this.props.getThreads( );
+        } else if ( !isReply ) {
+          this.setState( { redirect: true } );
+        } else {
+          this.props.loadThread( );
+        }
         setTimeout( ( ) => {
           this.props.toggleModal( );
         }, 200 ).bind( this );
@@ -35,6 +44,9 @@ class DeleteModal extends React.Component {
   }
 
   render ( ) {
+    if ( this.state.redirect )
+      return <Redirect to={ `/b/${ this.props.board }` } />;
+
     const type  = this.props.modal;
     const title = type === 'thread' ? 'Delete Thread' : 'Delete Reply';
 

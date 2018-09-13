@@ -153,7 +153,7 @@ class PublishForm extends React.Component {
             onClick={ ( ) => this.setState( { notify: false } ) }
             >
             </button>
-          A new thread was created on { this.state.board }.
+          A new thread was created on { this.state.board }. { ' ' }
           <Link to={ `/b/${this.state.board}` }>Click here</Link> to open the board.
         </div>
       </React.Fragment>

@@ -2,6 +2,7 @@ import React       from 'react';
 import Replies     from '../Replies/Replies';
 import ReplyForm   from '../Replies/ReplyForm';
 import DeleteModal from '../Utils/DeleteModal';
+import { Link }    from 'react-router-dom';
 import API         from '../Helpers/API';
 
 class Thread extends React.Component {
@@ -72,6 +73,12 @@ class Thread extends React.Component {
               updateList = { this.props.getThreads }
               />
             <footer className="card-footer">
+              <Link
+                to        = { `/b/${this.props.board}/thread/${thread._id}` }
+                className = "card-footer-item has-text-grey"
+                title     = "Open Full Thread">
+                Read all comments
+              </Link>
               <a
                 onClick={ ( ) => this.report( ) }
                 className="card-footer-item has-text-grey"
