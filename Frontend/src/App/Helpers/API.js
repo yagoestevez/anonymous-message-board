@@ -1,6 +1,5 @@
 import Axios from 'axios';
-
-const URL = 'http://localhost:5000';
+import URL   from '../config.js';
 
 const API = {
 

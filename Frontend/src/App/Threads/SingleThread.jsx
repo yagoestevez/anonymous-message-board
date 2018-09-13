@@ -44,6 +44,7 @@ class SingleThread extends React.Component {
       data => {
         this.setState( {
           threadID : data._id,
+          id       : data._id,
           created  : new Date( data.created_on ).toLocaleString( 'en-US'),
           bumped   : new Date( data.bumped_on  ).toLocaleString( 'en-US'),
           replies  : data.replies.reverse( ),
