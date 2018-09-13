@@ -36,27 +36,27 @@ class Boards extends React.Component {
             </p>
           </div>
         </section>
-        <section className="columns is-multiline is-centered">
+        <section className="section is-centered">
+          <div className="container">
             {
               this.state.boards.map( ( b, i ) => (
-                <div key={ i } className="column is-narrow">
+                <div key={ i }>
                   <div className="box">
                     <article>
                       <div className="media-content">
                         <div className="content has-text-centered">
                           <p className="title is-4">{ b }</p>
                         </div>
-                        <nav className="level is-mobile">
-                          <Link to={ '/b/' + b } className="button is-danger is-fullwidth">
-                            Open Board
-                          </Link>
-                        </nav>
+                        <Link to={ '/b/' + b } className="button is-danger is-fullwidth">
+                          Open Board
+                        </Link>
                       </div>
                     </article>
                   </div>
                 </div>
               ) )
             }
+          </div>
         </section>
         <Footer />
       </React.Fragment>
