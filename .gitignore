@@ -20,3 +20,6 @@
 /Frontend/yarn-error.log*
 
 /Backend/.env
+
+/Frontend/.git
+/Backend/.git
