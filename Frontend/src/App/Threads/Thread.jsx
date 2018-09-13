@@ -22,23 +22,6 @@ class Thread extends React.Component {
     )
   }
 
-  // deleteReply = ( event, reply_id ) => {
-  //   API.delete(
-  //     event,
-  //     this.props.board,
-  //     this.props.thread._id,
-  //     reply_id,
-  //     this.state.password,
-  //     ( ) => {
-  //       API.getThreads( );
-  //       // setTimeout( ( ) => { this.toggleModal( ) }, 200 );
-  //     },
-  //     error => this.setState( {
-  //       error: error.response.data ? error.response.data : 'Oops. Something went wrong'
-  //     } )
-  //   );
-  // }
-
   toggleModal = ( type, id ) => {
     this.setState( { modal: type, id: id } );
   }
