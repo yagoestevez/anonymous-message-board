@@ -94,8 +94,8 @@ suite( 'Functional Tests', ( ) => {
           .delete( '/api/threads/testboard' )
           .send( { thread_id: secondThreadID, delete_password: 'MyWrongPass' } )
           .end( ( err,res ) => {
-            expect( res.status ).to.equal( 200 );
-            expect( res.text ).to.equal( 'incorrect password' );
+            expect( res.status ).to.equal( 400 );
+            // expect( res.text ).to.equal( 'incorrect password' );
             done( );
           } )
       } );
@@ -205,8 +205,8 @@ suite( 'Functional Tests', ( ) => {
             delete_password : 'MyWrongPass'
           } )
           .end( ( err,res ) => {
-            expect( res.status ).to.equal( 200 );
-            expect( res.text ).to.equal( 'incorrect password' );
+            expect( res.status ).to.equal( 400 );
+            // expect( res.text ).to.equal( 'incorrect password' );
             done( );
           } )
       } );
